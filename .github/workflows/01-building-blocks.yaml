@@ -5,12 +5,16 @@ on: [push, workflow_dispatch]
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
-    name: Say hello
     steps:
-      - run: echo "Hello, World!"
+      - name: Say hello
+        run: echo "Hello, World!"
 
   echo-goodbye:
     runs-on: ubuntu-latest
-    name: Say goodbye
     steps:
-      - run: echo "Goodbye!"
+      - name: Failed step
+        run: |
+          echo "I will fail"
+          exit 1
+      - name: Say goodbye
+        run: echo "Goodbye!"
