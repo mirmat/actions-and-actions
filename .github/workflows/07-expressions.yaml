@@ -4,9 +4,10 @@ on:
   push:
   workflow_dispatch:
     inputs:
-      type: boolean
-      default: false
-
+      debug:
+        type: boolean
+        default: false
+        
 jobs:
   echo:
     runs-on: ubuntu-latest
